@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+:root{
+    --white: #FFFFFF;
+    --light: #FFFFFF;
+    --orange: #f70c0c;
+}
+body{
+    background-color: #FFFFFF;
+    font-family: system-ui;
+    align-items: baseline;
+}
+.container {
+    border: 1px solid var(--white);
+    width: 99vw;
+    display: grid;
+    grid-template-columns: 200px auto 0px;
+    padding: 0px 1rem;
+    border-radius: 30px;
+   height: 100vh;
+    
+}
+.container .center {
+    background-color: var(--light);
+    border-left: 1px solid var(--light);
+    border-right: 1px solid var(--light);
+    width: 100%;
+}
+
+.center h1{
+    padding:20px;
+    color: var(--light);
+    text-shadow: 1px 1px 5px rgb(36, 36, 36);
+}
+
+.containe{
+    width:100%;
+    margin:50px auto
+}
+.list{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    flex: 1;
+    margin-left: 5rem;
+}
+.item{
+    text-align: center;
+    position: relative;
+    background-color: #b1b1b1;
+    padding:20px;
+    margin:30px 16px;
+    opacity: 0;
+    border-radius: 26px;
+}
+.item .img{
+    padding:10px;
+    width:100%;
+    text-align: center;
+}
+.item .img img{
+    width:100%;
+    filter: drop-shadow(2px 2px 40px #1b1b1b);
+}
+.item:hover .img img {
+    transform: translateY(-25%); 
+    transition: transform 1s ease; 
+}
+
+.item:hover .img img{
+    filter: drop-shadow(2px 2px 40px var(--orange));
+    border-bottom:2px dotted #1b1b1b ;
+}
+.content{
+    letter-spacing: 1px;
+    vertical-align: baseline;
+    padding:20px;
+    height: max-content;
+}
+.content .category{
+    font-size: small;
+    opacity: 0.7;
+}
+.content .title{
+    font-size: 15px;
+    font-weight: 600;
+    margin-top:10px;
+}
+.content .price{
+    margin-top:10px;
+    font-size: 15px;
+}
+.content .price .old{
+    opacity: .7;
+    padding:0 10px;
+}
+.content .price .new{
+    padding:0 10px;
+    font-weight: 500;
+}
+.content .addCard{
+    margin-top:10px;
+    padding:10px 20px;
+    background-color: #e71414;
+    border:none;
+}
+.filterGrid{
+    text-align: right;
+    margin-right: 5px;
+}
+.filterGrid label{
+    margin: 0 0 5px;
+    background-color: #e5e5e5;
+    display: inline-block;
+    padding:10px;
+    width:70px;
+    text-align: center;
+}
+.filterGrid label img{
+    width:30px
+}
+input[name="grid"][value="1"]:checked ~ .list{
+    grid-template-columns: auto;
+}
+input[name="grid"][value="2"]:checked ~ .list{
+    grid-template-columns: auto auto;
+}
+input[name="grid"][value="3"]:checked ~ .list{
+    grid-template-columns: auto auto auto;
+}
+input[name="grid"][value="4"]:checked ~ .list{
+    grid-template-columns: auto auto auto auto;
+}
+input{
+    display: none;
+}
+
+input[name="grid"][value="1"]:checked ~ .filterGrid label[for="grid-1"]{
+    background-color: #ECD0AD;
+}
+input[name="grid"][value="2"]:checked ~ .filterGrid label[for="grid-2"]{
+    background-color: #ECD0AD;
+}input[name="grid"][value="3"]:checked ~ .filterGrid label[for="grid-3"]{
+    background-color: #ECD0AD;
+}input[name="grid"][value="4"]:checked ~ .filterGrid label[for="grid-4"]{
+    background-color: #ECD0AD;
+}
+@keyframes effectChangeGrid{
+    from{
+        opacity: 0;
+        transform: translate(0,10px);
+    }to{
+        opacity: 1;
+        transform: translate(0,0);
+    }
+}
+@keyframes effectChangeGrid2{
+    from{
+        opacity: 0;
+        transform: translate(0,10px);
+    }to{
+        opacity: 1;
+        transform: translate(0,0);
+    }
+}
+@keyframes effectChangeGrid3{
+    from{
+        opacity: 0;
+        transform: translate(0,10px);
+    }to{
+        opacity: 1;
+        transform: translate(0,0);
+    }
+}
+@keyframes effectChangeGrid4{
+    from{
+        opacity: 0;
+        transform: translate(0,10px);
+    }to{
+        opacity: 1;
+        transform: translate(0,0);
+    }
+}
+input[name="grid"][value="1"]:checked ~ .list .item{
+    animation:effectChangeGrid 1s ease-in-out 1 forwards
+}
+input[name="grid"][value="2"]:checked ~ .list .item{
+    animation:effectChangeGrid2 1s ease-in-out 1 forwards
+}
+input[name="grid"][value="3"]:checked ~ .list .item{
+    animation:effectChangeGrid3 1s ease-in-out 1 forwards
+}
+input[name="grid"][value="4"]:checked ~ .list .item{
+    animation:effectChangeGrid4 1s ease-in-out 1 forwards
+}
+.item:nth-child(2){
+    animation-delay: 0.2s!important;
+}
+.item:nth-child(3){
+    animation-delay: 0.4s!important;
+}
+.item:nth-child(4){
+    animation-delay: 0.6s!important;
+}
+.item:nth-child(5){
+    animation-delay: 0.8s!important;
+}
+.item:nth-child(6){
+    animation-delay: 1s!important;
+}
+.item:nth-child(7){
+    animation-delay: 1.2s!important;
+}
+.item:nth-child(8){
+    animation-delay: 1.4s!important;
+}
+input[name="grid"][value="1"]:checked ~ .list .item,
+input[name="grid"][value="2"]:checked ~ .list .item{
+    display: flex;
+    text-align: left;
+    align-items: center;
+}
+input[name="grid"][value="1"]:checked ~ .list .item .img{
+    width:30%;
+}
